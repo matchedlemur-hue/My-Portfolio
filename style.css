@@ -1,0 +1,330 @@
+:root {
+    --background: #121212; 
+    --card-bg: #1e1e1e; 
+    --text: #ffffff;
+    --accent: #007bff; 
+    --button-bg: #007bff; 
+    --button-text: #ffffff;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.light-mode {
+    --background: #f4f4f4; 
+    --card-bg: #fff; 
+    --text: #333;
+    --accent: #007bff;
+    --button-bg: #007bff;
+}
+
+body { 
+    font-family: sans-serif; 
+    background: var(--background); 
+    color: var(--text); 
+    line-height: 1.6; 
+    transition: var(--transition); 
+}
+
+button { 
+    background: var(--button-bg); 
+    color: var(--button-text); 
+    padding: 12px 20px;
+    border: none; 
+    cursor: pointer; 
+    border-radius: 4px; 
+    transition: background 0.3s ease; 
+}
+
+button:hover { 
+    background: #0056b3; 
+}
+
+.light-mode button:hover { 
+    background: #b20710; 
+}
+
+a { 
+    text-decoration: none; 
+    color: inherit;
+}
+
+ul { 
+    list-style: none; 
+}
+
+header {
+    width: 100%;
+    z-index: 1001; /* Higher than images */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    position: relative;
+    /* STICKY CORE PROPERTIES */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensures it stays above all other content */
+    /* 2025 MODERN LOOK: Frosted Glass Effect */
+    background: rgba(var(--card-bg-rgb), 0.8); /* Semi-transparent */
+    backdrop-filter: blur(10px); /* Blurs content behind it */
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+
+.logo { 
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    color: var(--accent); 
+} /* Used accent color for logo */
+
+.nav-links { 
+    display: flex; 
+    gap: 20px; 
+    transition: opacity 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.nav-links a:hover { 
+    color: var(--accent); 
+}
+
+/* When you hover over the nav-links container... */
+.nav-links:hover a {
+    opacity: 0.7; /* All links get 0.7 opacity */
+}
+
+/* ...BUT the specific link you are hovering over stays fully visible */
+.nav-links a:hover {
+    opacity: 1 !important;
+    color: var(--accent);
+}
+
+
+section { 
+    padding: 100px 5%; 
+}
+
+.hero { 
+    height: 60vh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    background: var(--background); 
+}
+
+.hero h1 { 
+    font-size: 3rem; 
+    margin-bottom: 0.5rem; 
+}
+
+/* Download Button Base Styles */
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 28px;
+    background: var(--accent);
+    color: white;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Animation: Scale & Pulse */
+.btn-download:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.5);
+    background: #0056b3; /* Darker accent */
+}
+
+/* Icon Animation: Sliding down */
+.btn-download svg {
+    transition: transform 0.3s ease;
+}
+
+.btn-download:hover svg {
+    transform: translateY(3px);
+    animation: bounce 0.6s infinite alternate;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(4px); }
+}
+
+/* Light Mode Variation */
+.light-mode .btn-download {
+    background: var(--button-bg);
+    box-shadow: 0 4px 15px rgba(229, 9, 20, 0.3);
+}
+
+.light-mode .btn-download:hover {
+    background: #b20710;
+}
+
+
+#projects h2, #contact h2 { 
+    margin-bottom: 2rem; 
+    border-bottom: 3px solid var(--accent); 
+    padding-bottom: 10px; display: inline-block; 
+}
+
+.project-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 20px; margin-top: 20px; 
+}
+
+.project-card { 
+    background: var(--card-bg); 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+}
+
+#contact-form { 
+    display: flex; 
+    flex-direction: column; 
+    max-width: 500px; 
+    gap: 15px; 
+}
+
+#contact-form input, #contact-form textarea { 
+    padding: 10px; 
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    background: var(--card-bg);
+    color: var(--text); 
+}
+
+#contact-form button { 
+    background: var(--accent); 
+    color: white; 
+    padding: 12px;
+    border: none; 
+    cursor: pointer; 
+}
+
+
+/* --- NEW Advanced Theme Switcher Styling (SVG) --- */
+#theme-toggle { 
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    padding: 0; 
+    color: var(--text); 
+}
+
+#theme-toggle:hover { 
+    color: var(--accent); 
+}
+
+/* Dark mode transforms */
+.dark-mode .sun { 
+    transform: scale(0.5); 
+    fill: currentColor; 
+}
+
+.dark-mode .sun-beams { 
+    opacity: 0; 
+    stroke: currentColor;
+}
+
+.dark-mode .moon circle { 
+    transform: translateX(6px); 
+}
+
+/* Light mode transforms */
+.light-mode .sun { 
+    transform: scale(1); 
+    fill: currentColor; 
+}
+
+.light-mode .sun-beams { 
+    opacity: 1; 
+    stroke: currentColor; 
+}
+
+.light-mode .moon circle { 
+    transform: translateX(0); 
+}
+
+/* Smooth Transitions for the SVG elements */
+.sun, .sun-beams line, .moon circle {
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1), fill 0.25s, stroke 0.25s;
+}
+
+/* --- Optimized Background Image Layout --- */
+
+/* 1. Ensure the section is the reference point for the background image */
+.has-image {
+    display: flex;
+    align-items: center;
+    position: relative; /* Essential for absolute positioning of the image */
+    min-height: 600px;  /* Ensures enough height to see the image */
+    overflow: hidden;   /* Prevents images from leaking outside the section */
+}
+
+/* 2. Limit the text/content to the left 50% so it never overlaps the image */
+.content-wrapper {
+    flex: 0 0 50%; 
+    z-index: 2; /* Keeps text on top */
+    position: relative;
+}
+
+/* 3. Force the image container to the right background */
+.section-image {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%); /* Centers image vertically */
+    width: 45%; /* Covers the right side */
+    z-index: 1; /* Sits behind the text layer */
+    pointer-events: none; /* Prevents image from blocking mouse clicks on the form */
+    display: flex;
+    justify-content: center;
+}
+
+/* 4. Ensure the image scales nicely */
+.section-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+    /* Optional: Slight transparency for a 'background' feel */
+    opacity: 0.9; 
+}
+
+/* 5. Mobile Fix: On small screens, hide background images to keep the form readable */
+@media (max-width: 992px) {
+    .has-image {
+        flex-direction: column;
+        min-height: auto;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .content-wrapper {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .section-image {
+        position: static; /* Moves image back into normal flow */
+        transform: none;
+        width: 100%;
+        margin-top: 30px;
+        display: block; /* Show images below text on mobile */
+    }
+    .section-image img {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Advanced Portfolio</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="unpkg.com" rel="stylesheet">
+</head>
+<body class="dark-mode">
+    <header>
+        <nav class="navbar">
+            <div class="logo">Portfolio</div>
+            <ul class="nav-links">
+                <div class="theme-switch-wrapper">
+                    <!-- NEW: This is your sophisticated SVG button -->
+                    <button id="theme-toggle" aria-label="Toggle light and dark mode">
+                        <svg width="24" height="24" viewBox="0 0 24 24" class="sun-and-moon">
+                            <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" />
+                            <g class="sun-beams" stroke="currentColor">
+                                <line x1="12" y1="1" x2="12" y2="3" />
+                                <line x1="12" y1="21" x2="12" y2="23" />
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                                <line x1="1" y1="12" x2="3" y2="12" />
+                                <line x1="21" y1="12" x2="23" y2="12" />
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                            </g>
+                            <mask class="moon" id="moon-mask">
+                                <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                                <circle cx="24" cy="10" r="6" fill="black" />
+                            </mask>
+                        </svg>
+                    </button>
+                </div>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="hero">
+            <h1 data-aos="fade-up">Hello, I'm **[Usmon Bakhodir]**</h1>
+            <p id="typewriter" data-aos="fade-up" data-aos-delay="200">I build advanced web experiences...</p>
+            <div class="cta-wrapper" data-aos="fade-up" data-aos-delay="400">
+                <a href="./Usmon Bakhodir CV.pdf" download class="btn-download">
+                    <span>Download CV</span>
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <path fill="currentColor" d="M12,16L7,11L8.4,9.6L11,12.2V4H13V12.2L15.6,9.6L17,11L12,16M5,18H19V20H5V18Z" />
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <section id="projects" class="has-image">
+            <div class="content-wrapper">
+                <h2 data-aos="fade-right">My Works</h2>
+                <!-- Project Filtering Buttons can go here later -->
+                <div class="project-grid">
+                    <!-- Projects will be injected here by JavaScript -->
+                </div>
+                <div class="filter-container" data-aos="fade-up">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="js">JavaScript</button>
+                    <button class="filter-btn" data-filter="css">Design/CSS</button>
+                </div>
+            </div>
+            <!-- NEW IMAGE CONTAINER -->
+            <div class="section-image" data-aos="fade-left">
+                <img src="./undraw_programming_j1zw.svg" alt="Project Visuals">
+            </div>
+        </section>
+
+        <section id="contact" class="has-image">
+            <div class="content-wrapper">
+                <h2 data-aos="fade-left">Get In Touch</h2>
+                <form id="contact-form" data-aos="fade-up">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+            <!-- NEW IMAGE CONTAINER -->
+            <div class="section-image" data-aos="fade-right">
+                <img src="./undraw_contact-us_kcoa.svg" alt="Contact Visual">
+            </div>
+        </section>
+
+    </main>
+
+    <script src="unpkg.com"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
